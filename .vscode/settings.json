@@ -1,3 +1,8 @@
 {
-    "python.defaultInterpreterPath": "/opt/homebrew/Caskroom/miniconda/base/envs/tunescoutv2/bin/python"
+    "python.defaultInterpreterPath": "/opt/homebrew/Caskroom/miniconda/base/envs/ts-backend/bin/python",
+  "files.exclude": {
+    "**/__pycache__/": true,
+    "**/*.pyc": true,
+    "**/__init__.py": true
+  }
 }
