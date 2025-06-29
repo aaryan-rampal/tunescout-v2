@@ -1,10 +1,7 @@
-import { useState } from 'react'
 
 const generateRandomString = (length: number): string => {
   const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   const values = crypto.getRandomValues(new Uint8Array(length));
-  console.log(values);
-
   // starts with "", concats possible[x % possible.length] for each random value in values
   return values.reduce((acc, x) => acc + possible[x % possible.length], "");
 }
