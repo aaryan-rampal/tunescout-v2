@@ -35,12 +35,11 @@ function App() {
           const env_variables: Record<string, string> = getMultipleVariables(['VITE_SPOTIFY_CLIENT_ID', 'VITE_SPOTIFY_REDIRECT_URI'])
           const clientId = env_variables['VITE_SPOTIFY_CLIENT_ID']
           const redirectUri = env_variables['VITE_SPOTIFY_REDIRECT_URI']
-
-          console.log('Client ID:', clientId)
-          console.log('Redirect URI:', redirectUri)
-
           const scope = 'user-read-private user-read-email'
           const authUrl = new URL('https://accounts.spotify.com/authorize')
+
+          // console.log('Client ID:', clientId)
+          // console.log('Redirect URI:', redirectUri)
 
           pkceFlow(clientId, redirectUri, scope, authUrl)
         }} className="login-spotify">
