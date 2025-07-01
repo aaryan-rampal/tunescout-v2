@@ -1,3 +1,4 @@
+import { constructSpotifyAuthUrl, getSpotifyEnvVariables } from "../utils/spotify_utils";
 
 const generateRandomString = (length: number): string => {
   const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -21,7 +22,10 @@ const base64encode = (input: ArrayBuffer): string => {
 
 
 
-const pkceFlow = async (clientId: string, redirectUri: string, scope: string, authUrl: URL): Promise<void> => {
+const pkceFlow = async (): Promise<void> => {
+    const authUrl = constructSpotifyAuthUrl();
+    const {clientId, redirectUri, scope} = getSpotifyEnvVariables();
+
     const codeVerifier = generateRandomString(128);
     const hashed = await sha256(codeVerifier);
     const codeChallenge = base64encode(hashed);
