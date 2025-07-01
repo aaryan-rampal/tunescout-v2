@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Callback from './pages/Callback.tsx'
+import Dashboard from './pages/Dashboard.tsx'
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
     path: "/callback",
     element: <Callback />,
   },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+  }
 ])
 
 createRoot(document.getElementById('root')!).render(

@@ -17,7 +17,7 @@ const Callback = () => {
             // Handle the case where no code is present
             console.error("Authorization code not found in the URL.");
         }
-        navigate('/', {replace: true}); // Redirect to home or another page
+        navigate('/dashboard', {replace: true}); // Redirect to home or another page
     }, [location, navigate]);
 
     return (<div></div>)
