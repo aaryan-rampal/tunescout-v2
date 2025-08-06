@@ -13,6 +13,7 @@ const Callback = () => {
         if (code) {
             // Store the code in local storage or handle it as needed
             window.localStorage.setItem('auth_code', code);
+            console.log("Authorization code received:", code);
         } else {
             // Handle the case where no code is present
             console.error("Authorization code not found in the URL.");
